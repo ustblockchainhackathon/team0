@@ -8,3 +8,5 @@ account = {
 }
 
 node = "http://134.168.56.174:1337/rpc"
+
+compiler = "http://134.168.56.175:9099"
