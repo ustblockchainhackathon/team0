@@ -8,8 +8,9 @@
 	function SignatureCtrl($scope, $stateParams, ionicMaterialInk,NotificationsFactory) {
 		//ionic.material.ink.displayEffect();
 		ionicMaterialInk.displayEffect();
-      
-        $scope.pushNotification=JSON.parse(NotificationsFactory.getSignature());
+        
+        $scope.pushNotification=NotificationsFactory.getSignature();
+        $scope.pushNotification.requestInfo=JSON.parse($scope.pushNotification.requestInfo)
         
         $scope.sign= function(){
             var objToPost={
