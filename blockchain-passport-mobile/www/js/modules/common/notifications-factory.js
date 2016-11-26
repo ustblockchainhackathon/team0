@@ -35,7 +35,7 @@
 		factory.postRegister = function (item) {
 			var req = {
 				method: 'POST',
-				url: '/register/mobile',
+				url: 'http://gov-server.eu-gb.mybluemix.net/register/mobile',
 				headers: REQUEST_BACKEND_HEADER,
 				data: item
 			};
@@ -45,7 +45,7 @@
         factory.postSignature = function (item) {
 			var req = {
 				method: 'POST',
-				url: '/signature',
+				url: 'http://gov-server.eu-gb.mybluemix.net/signature',
 				headers: REQUEST_BACKEND_HEADER,
 				data: item
 			};
