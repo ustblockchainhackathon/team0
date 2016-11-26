@@ -7,7 +7,7 @@ module.exports = function(ethereumAddress, requestId, name, surname, dob, ssn) {
 	type = 2,
 	city = "Madrid",
 	ip = "127.0.0.1",
-	timestamp = Date.now(),
+	timestamp = Date.now();
 	
 	var registrationToken;
 	var secondaryAddress;

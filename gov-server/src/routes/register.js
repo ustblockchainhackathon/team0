@@ -6,7 +6,7 @@ var express = require('express'),
       errorHandler = require('./errorHandler.js'),
       challengeSevice = require('../services/challengeService.js'),
       MobileRegistrationRequest = require('../model/mobileRegistrationRequest.js'),
-      UserAuthenticationRequest = require('../model/userAuthenticationRequest.js'),
+      UserRegistrationRequest = require('../model/userRegistrationRequest.js'),
       mobileDB = require('../services/mobileDB.js'),
       passportIndex = require('../services/passportIndex.js');
 
@@ -35,9 +35,9 @@ router.post('/user', function (req, res, next) {
 	var requestId = uuid.v4();
     var ethereumAddress = req.body.ethereumAddress;
     var personalDetails = req.body.personalDetails;
-	console.log(requestId + ' Received user registration request:' + ethereumAddress  + " " + JSON.stringify(personalDetails));
-    
-    var request = UserAuthenticationRequest(ethereumAddress, requestId, personalDetails.name, personalDetails.surname,
+	console.log(requestId + ' Received user registration request:' + ethereumAddress  + " " + personalDetails);
+	
+    var request = UserRegistrationRequest(ethereumAddress, requestId, personalDetails.name, personalDetails.surname,
     	personalDetails.dob, personalDetails.ssn)
     
 	Q.fcall(function retrieveMobileMapping() {
