@@ -1,0 +1,22 @@
+{
+	"name": "NodejsStarterApp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"express": "4.13.x",
+		"cfenv": "1.0.x",
+		 "mocha" : "latest",
+	    "chai " : "latest",
+	    "q": "^1.4.1",
+	    "solc":"0.3.4",
+	    "eris-db": "0.15.0",
+	    "eris-contracts":"0.13.3"
+	},
+	"repository": {},
+	"engines": {
+		"node": "4.x"
+	} 
+}
