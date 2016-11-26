@@ -26,7 +26,7 @@ angular.module('App.Controllers')
 			LoginFactory.postAuthentication(dataObject).then(function (result) {
 				self.userDetails= result;
                 self.photo=RegisterFactory.getPhoto();
-                /*LoginFactory.validateHash(self.userDetails.imageHash).then(function (resultValidate) {
+                LoginFactory.validateHash(self.userDetails.imageHash).then(function (resultValidate) {
 						console.log(resultValidate)
 						console.log('succes')
 						growl.success("Succeful");
@@ -35,7 +35,7 @@ angular.module('App.Controllers')
 					},
 					function (response) { // optional
 						growl.error(response.data);
-					})*/
+					})
 
 
 			}, function (error) {

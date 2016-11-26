@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         paths: {
             // Configurable paths
             app: 'app',
-            dist: '../node-server/dist',
+            dist: '../webApp-server/dist',
             server: 'server',
             doc: 'doc'
         },
