@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "666412444674",
+    "firebase_url": "https://hackathon-gft.firebaseio.com",
+    "project_id": "hackathon-gft",
+    "storage_bucket": "hackathon-gft.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666412444674:android:e2e4cca4f085635c",
+        "android_client_info": {
+          "package_name": "com.ionicframework.blockchainpassportmobile568225"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666412444674-0636a643k4vs4470bd20tod1mmtq9idv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4AyltGJHLUdIewtMgMpYiOJvrSZHVVY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

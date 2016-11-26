@@ -36,7 +36,7 @@ angular.module('starter', ['ionic',
 .config(function ($stateProvider, $urlRouterProvider) {
 	var config = {
 		//apiKey: "AIzaSyB3ANlViTLKz2aTYM01RzE0g2i-TitGFxs",  // Your Firebase API key
-		databaseURL: "https://prova-3cb00.firebaseio.com/"
+		databaseURL: "https://hackathon-gft.firebaseio.com/"
 	};
 	firebase.initializeApp(config);
 	
