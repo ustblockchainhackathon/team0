@@ -14,8 +14,10 @@ module.exports = (function initialize() {
         	var passportIndexContract = erisWrapper.getPassportIndexContract();
         	var deferred = Q.defer();
         	var passport = owner+"&"+name+"&"+surname+"&"+dob+"&"+ssn+"&"+imageId+"&"+imageHash
+        	console.log(passport)
+        	console.log(account)
         	
-        	passportIndexContract.register.apply(passportIndexContract, [ passport, {from: account}, function(error, data){
+        	passportIndexContract.register.apply(passportIndexContract, [owner,passport, {from: account}, function(error, data){
         		if(error) {
         			deferred.reject(error);
         		} else {
@@ -28,7 +30,7 @@ module.exports = (function initialize() {
         getPassport : function getPassport(owner) {
         	var deferred = Q.defer();
         	var passportIndexContract = erisWrapper.getPassportIndexContract();
-        	passportIndexContract.passports(owner,[function(error, data){
+        	passportIndexContract.passports.apply(passportIndexContract,[owner,function(error, data){
         		
         		if(error) {
         			deferred.reject(error);
@@ -40,8 +42,9 @@ module.exports = (function initialize() {
         				name : splitted[1],
         				surname : splitted[2],
 						dob : splitted[3],
-						imageId : splitted[4],
-						imageHash : splitted[5]
+						ssn : splitted[4],
+						imageId : splitted[5],
+						imageHash : splitted[6]
         			}
         			deferred.resolve(passport);
         		}
