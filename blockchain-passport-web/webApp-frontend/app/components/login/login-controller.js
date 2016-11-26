@@ -15,33 +15,36 @@ angular.module('App.Controllers')
 		self.scanQr = function (){
 			self.showScanQR=true;
 		}
-
+		$scope.qrCodeIsScanned = false;
 		$scope.onSuccess = function(data) {
+
 			console.log(data);
 			var dataObject={
 				"ethereumAddress":data,
 				"name": "David",
 				"surname":"Belinchon"
 			}
-			LoginFactory.postAuthentication(dataObject).then(function (result) {
-				self.userDetails= result;
-                self.photo=RegisterFactory.getPhoto();
-                LoginFactory.validateHash(self.userDetails.imageHash).then(function (resultValidate) {
-						console.log(resultValidate)
-						console.log('succes')
-						growl.success("Succeful");
-						//display the image and table
-						self.displayDetails=true;
-					},
-					function (response) { // optional
-						growl.error(response.data);
-					})
+			if(!$scope.qrCodeIsScanned){
+				$scope.qrCodeIsScanned = true;
+				LoginFactory.postAuthentication(dataObject).then(function (result) {
+					self.userDetails= result;
+					self.photo=RegisterFactory.getPhoto();
+					LoginFactory.validateHash(self.userDetails.imageHash).then(function (resultValidate) {
+							console.log(resultValidate)
+							console.log('succes')
+							growl.success("Succeful");
+							//display the image and table
+							self.displayDetails=true;
+						},
+						function (response) { // optional
+							growl.error(response.data);
+						})
 
-
-			}, function (error) {
-				growl.error(error.data);
-				console.log('Error', error);
-			});
+				}, function (error) {
+					growl.error(error.data);
+					console.log('Error', error);
+				});
+			}
 		};
 
 		$scope.onError = function(error) {

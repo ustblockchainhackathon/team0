@@ -3,7 +3,7 @@
 	<div class="rowRegister">
 		<div class="row">
 			<a class="page-scroll btn btn-xl" ng-click="login.scanQr()">Scan Citizen QR code</a>
-			<qr-scanner ng-success="onSuccess(data)" ng-error="onError(error)" width="400" height="300" ng-if="login.showScanQR"></qr>
+			<qr-scanner ng-if="!qrCodeIsScanned" ng-success="onSuccess(data)" ng-error="onError(error)" width="400" height="300" ng-if="login.showScanQR"></qr>
 		</div>
 		<div class="row" ng-show="register.displayDetails">
 			<div class="col-md-5 col-md-offset-1">
