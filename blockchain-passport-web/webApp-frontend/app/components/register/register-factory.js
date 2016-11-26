@@ -13,9 +13,16 @@
         var photo;
 
 		factory.postRegistration = function (item) {
+			var personalDetails = {};
+			personalDetails.name = item.name;
+			personalDetails.surname = item.surname;			
+			personalDetails.dob = item.dob;			
+			personalDetails.ssn = item.ssn;	
+			item.personalDetails = personalDetails;
 			var req = {
 				method: 'POST',
-				url: '/register/user',
+				//url: 'http://localhost:3000/register/user',//local debugging
+				url: 'http://gov-server.eu-gb.mybluemix.net/register/user',
 				headers: REQUEST_BACKEND_HEADER,
 				data: item
 			};
