@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('starter.registerPush')
+		.module('starter.NotificationsService')
 		.factory('NotificationsService', function (DeviceService, NotificationsFactory) {
 			var FCMtoken;
 
