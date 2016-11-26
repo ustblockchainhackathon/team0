@@ -4,6 +4,7 @@ const express = require('express'),
       registerRoute = require('./src/routes/register.js'),
       authenticateRoute = require('./src/routes/authenticate.js'),
       signatureRoute = require('./src/routes/signature.js'),
+      cfenv = require('cfenv');
       app = express();
       
 app.use(bodyParser.json());
@@ -19,7 +20,9 @@ app.use('/register', registerRoute);
 app.use('/authenticate', authenticateRoute);
 app.use('/signature', signatureRoute);
 
-app.listen(3000, function() {
+var appEnv = cfenv.getAppEnv();
+
+app.listen(appEnv.port, function() {
   console.log('Listening on port 3000...')
 })
 
