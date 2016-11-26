@@ -1,0 +1,6 @@
+*.exe
+*/node_modules/**
+blockchain-passport-mobile/platforms/
+blockchain-passport-mobile/plugins/
+blockchain-passport-mobile/www/lib
+.idea
