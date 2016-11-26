@@ -5,15 +5,52 @@
 		.module('starter.NotificationsFactory')
 		.factory('NotificationsFactory', NotificationsFactory);
 
-	function NotificationsFactory($state) {
+	function NotificationsFactory($state,$http) {
 
 		var factory = [];
-
+        var signatureItem;
+        var addressItem;
 		factory.notification = function notification(notificationData) {
 			console.log(notificationData);
-			
-			$state.go('signature');
+			signatureItem=notificationData;
+			$state.go('app.signature');
 		}
+
+        factory.getSignature = function (){
+          return signatureItem;
+        }
+        
+        factory.setAddress = function (item){
+          addressItem = item;
+        }
+
+        factory.getAddress = function (){
+          return addressItem;
+        }
+        
+        var REQUEST_BACKEND_HEADER = {
+			'Content-Type':   'application/json; charset=utf-8'
+		}
+
+		factory.postRegister = function (item) {
+			var req = {
+				method: 'POST',
+				url: 'http://gov-server.eu-gb.mybluemix.net/register/mobile',
+				headers: REQUEST_BACKEND_HEADER,
+				data: item
+			};
+			return $http(req);
+		};
+        
+        factory.postSignature = function (item) {
+			var req = {
+				method: 'POST',
+				url: 'http://gov-server.eu-gb.mybluemix.net/signature',
+				headers: REQUEST_BACKEND_HEADER,
+				data: item
+			};
+			return $http(req);
+		};
 
 
 

@@ -211,3 +211,9 @@ p {
 .platform-android .popover{
 margin-top:10px;
 }
+
+.qrcode {
+      display: block;
+      margin: 24px auto 16px;
+      max-width: 100%;
+    }

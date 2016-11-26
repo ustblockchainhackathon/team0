@@ -28,7 +28,7 @@
     "tag": "v0.6.6",
     "commit": "7cfc479b8246e6d15e660bc2a69fa5b3a792ce98"
   },
-  "_source": "git://github.com/fians/Waves.git",
+  "_source": "https://github.com/fians/Waves.git",
   "_target": "0.6",
   "_originalSource": "waves"
 }
