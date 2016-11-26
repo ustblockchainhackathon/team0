@@ -13,7 +13,7 @@
 		factory.notification = function notification(notificationData) {
 			console.log(notificationData);
 			signatureItem=notificationData;
-			$state.go('signature');
+			$state.go('app.signature');
 		}
 
         factory.getSignature = function (){
@@ -36,6 +36,16 @@
 			var req = {
 				method: 'POST',
 				url: '/register/mobile',
+				headers: REQUEST_BACKEND_HEADER,
+				data: item
+			};
+			return $http(req);
+		};
+        
+        factory.postSignature = function (item) {
+			var req = {
+				method: 'POST',
+				url: '/signature',
 				headers: REQUEST_BACKEND_HEADER,
 				data: item
 			};
