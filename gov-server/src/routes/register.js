@@ -35,7 +35,7 @@ router.post('/user', function (req, res, next) {
 	var requestId = uuid.v4();
     var ethereumAddress = req.body.ethereumAddress;
     var personalDetails = req.body.personalDetails;
-	console.log(requestId + ' Received user registration request:' + ethereumAddress  + " " + personalDetails);
+	console.log(requestId + ' Received user registration request:' + ethereumAddress  + " " + JSON.stringify(personalDetails));
     
     var request = UserAuthenticationRequest(ethereumAddress, requestId, personalDetails.name, personalDetails.surname,
     	personalDetails.dob, personalDetails.ssn)
