@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<div class="container-fluid totalHeight">
+	<div class="rowRegister">
+		<div class="row">
+			<a class="page-scroll btn btn-xl" ng-click="login.scanQr()">Scan Citizen QR code</a>
+			<qr-scanner ng-success="onSuccess(data)" ng-error="onError(error)" width="400" height="300" ng-if="login.showScanQR"></qr>
+		</div>
+		<div class="row" ng-show="register.displayDetails">
+			<div class="col-md-5 col-md-offset-1">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Property</th>
+							<th>Detail</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Name</td>
+							<td>{{register.userDetails.name}}</td>
+						</tr>
+						<tr>
+							<td>Surname</td>
+							<td>{{register.userDetails.surname}}</td>
+						</tr>
+						<tr>
+							<td>Date of Birthday</td>
+							<td>{{register.userDetails.dob}}</td>
+						</tr>
+						<tr>
+							<td>Social security number</td>
+							<td>{{register.userDetails.ssn}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-5">
+				<img data-ng-src="{{login.photo}}" />
+			</div>
+
+		</div>
+	</div>
+</div>
