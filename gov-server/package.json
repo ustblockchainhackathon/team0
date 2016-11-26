@@ -11,7 +11,6 @@
 		"mocha" : "latest",
 	    "chai " : "latest",
 	    "q": "^1.4.1",
-	    "solc":"0.3.4",
 	    "eris-db": "0.15.0",
 	    "eris-contracts":"0.13.3",
         "body-parser": "latest",
@@ -19,11 +18,7 @@
 	    "cookie-parser": "^1.4.3",
 	    "email-validator": "latest",
 	    "fcm-node": "latest",
-	    "geoip2": "^1.0.5",
-	    "node-uuid": "latest",
-	    "public-ip": "^2.0.1",
-	    "request-ip": "^1.2.2",
-	    "winston": "latest"
+	    "node-uuid": "latest"
 	},
 	"repository": {},
 	"engines": {

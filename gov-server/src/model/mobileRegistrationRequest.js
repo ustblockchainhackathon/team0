@@ -1,9 +1,9 @@
-module.exports = function(registrationToken, ethereumAddress,requestId,details) {
+module.exports = function(registrationToken, ethereumAddress,requestId) {
 
 	var title = "Mobile device registration request",
 	body = "Accept if you wish to use this device for Ethereum authentication",
-	city = details.city,
-	ip = details.ip,
+	city = "Madrid",
+	ip = "127.0.0.1",
 	timestamp = Date.now(),
 	osAndWebBrowser = details.osAndWebBrowser,
 	type = 1;

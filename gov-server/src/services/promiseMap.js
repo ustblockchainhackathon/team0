@@ -2,7 +2,7 @@
 
 module.exports = (function init() {
 
-	const promiseMap = {};
+	var promiseMap = {};
 	
 	return {
 		registerPromise:  function registerPromise(promiseId,promise,timeout) {

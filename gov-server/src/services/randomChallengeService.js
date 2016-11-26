@@ -1,6 +1,6 @@
 'use strict'
 
-const crypto = require('crypto'),
+var crypto = require('crypto'),
       Q = require('q');
 
 module.exports = (function init() {

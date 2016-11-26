@@ -1,7 +1,6 @@
 'use strict';
 
 var erisContracts = require('eris-contracts'),
-      solc = require('solc'),
       accounts = require("./accounts.js").accounts,
       nodes = require("./ips.js").ips,
       account = accounts[0].address,

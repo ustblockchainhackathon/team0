@@ -1,7 +1,7 @@
 'use strict';
 
-const Q = require('q'),
-      promiseMap = require('../maps/promiseMap.js'),
+var Q = require('q'),
+      promiseMap = require('./promiseMap.js'),
       firebaseService = require('./firebaseService.js'),
       randomChallengeService = require('./randomChallengeService.js');
 
@@ -11,7 +11,7 @@ module.exports = (function init() {
 		challengeMobile : function challengeMobile (request) {
 			return randomChallengeService.generateRandomString()
 			.then(function sendPushNotificationAndWaitForSignature(challengeString) {
-				log.info(request.getRequestId() + ' starting challenge for registrationToken '
+				console.log(request.getRequestId() + ' starting challenge for registrationToken '
 				    + request.getRegistrationToken() + 'generated random challenge:' + challengeString);
 				request.setChallenge(challengeString);
 				var deferred = Q.defer();
@@ -19,11 +19,11 @@ module.exports = (function init() {
 				firebaseService.sendPushNotification(request);
 				return deferred.promise;
 			}).then(function verifySignature(signature) {
-				log.info(request.getRequestId() + " verifying signature " + signature);
+				console.log(request.getRequestId() + " verifying signature " + signature);
 				//TODO signature verification
 				return true;
 			}).then(function afterSignatureVerification(result) {
-				log.info(request.getRequestId() + " signature is: " + (result ? "valid" : "invalid"));
+				console.log(request.getRequestId() + " signature is: " + (result ? "valid" : "invalid"));
 				if (result) {
 					promiseMap.resolvePromise('M' + request.getRequestId());
 				} else {
