@@ -17,7 +17,7 @@ angular.module('starter', ['ionic',
 							'starter.Admin', 
 							'starter.Register'])
 
-.run(function ($ionicPlatform, NotificationsService) {
+.run(function ($ionicPlatform, NotificationsService, $firebaseObject) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)

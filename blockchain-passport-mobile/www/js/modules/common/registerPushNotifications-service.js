@@ -7,7 +7,7 @@
 			var FCMtoken;
 
 			function getPushNotificationToken() {
-				if (!DeviceService.isBrowser()) {
+				//if (!DeviceService.isBrowser()) {
 					FCMPlugin.getToken(
 						function (token) {
 							console.log(token);
@@ -36,7 +36,7 @@
 							console.log('Error registering onNotification callback: ' + err);
 						}
 					);
-				}
+				//}
 			}
 
 
