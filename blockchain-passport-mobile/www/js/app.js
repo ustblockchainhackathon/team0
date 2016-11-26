@@ -8,6 +8,8 @@ angular.module('starter.NotificationsFactory', []);
 angular.module('starter.DeviceService', []);
 angular.module('starter.Admin', []);
 angular.module('starter.Register', []);
+angular.module('starter.Admin', []);
+angular.module('starter.Signature', []);
 angular.module('starter', ['ionic', 
 							'ionic-material', 
 							'firebase', 
@@ -15,13 +17,13 @@ angular.module('starter', ['ionic',
 							'starter.NotificationsFactory',
 							'starter.DeviceService',
 							'starter.Admin', 
-							'starter.Register'])
+							'starter.Register','starter.Signature','starter.Admin'])
 
 .run(function ($ionicPlatform, NotificationsService, $firebaseObject) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
-		NotificationsService.getPushNotificationToken();
+		//NotificationsService.getPushNotificationToken();
   
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -54,6 +56,24 @@ angular.module('starter', ['ionic',
             'menuContent': {
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterCtrl'
+            }
+        }
+    })
+        .state('app.signature', {
+        url: '/signature',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/signature.html',
+                controller: 'SignatureCtrl'
+            }
+        }
+    })
+        .state('app.admin', {
+        url: '/admin',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/admin.html',
+                controller: 'AdminCtrl'
             }
         }
     })
