@@ -12,9 +12,8 @@ router.post('/', function (req, res, next) {
 	
 	Q.fcall(function submitSignature() {
 		var deffered = Q.defer();
-		signaturePromiseMap.registerPromise('M' + requestId, deffered, 10000);
 		signaturePromiseMap.resolvePromise('C' + requestId, signature);
-		return deferred
+		return deferred.promise
 	}).then(function onSuccess() {
 		console.log(requestId + ' Signature submission concluded succesfully!');
 		res.sendStatus(200);

@@ -24,11 +24,6 @@ module.exports = (function init() {
 				return true;
 			}).then(function afterSignatureVerification(result) {
 				console.log(request.getRequestId() + " signature is: " + (result ? "valid" : "invalid"));
-				if (result) {
-					promiseMap.resolvePromise('M' + request.getRequestId());
-				} else {
-					promiseMap.rejectPromise('M' + request.getRequestId(), new Error("Invalid signature!"));
-				}
 				return result;
 			});
 		}

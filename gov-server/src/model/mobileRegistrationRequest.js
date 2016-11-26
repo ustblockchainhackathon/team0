@@ -5,7 +5,6 @@ module.exports = function(registrationToken, ethereumAddress,requestId) {
 	city = "Madrid",
 	ip = "127.0.0.1",
 	timestamp = Date.now(),
-	osAndWebBrowser = details.osAndWebBrowser,
 	type = 1;
 
 	var challenge;

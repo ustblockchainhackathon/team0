@@ -20,10 +20,15 @@ router.post('/', function (req, res, next) {
 	var request = UserAuthenticationRequest(req.body.ethereumAddress, requestId, req.body.personalDetails.name, req.body.personalDetails.surrname);
 
 	Q.fcall(function retrieveMobileMapping() {
-        var authenticationToken = mobileDB.getRegistrationToken(ethereumAddress)
+        var authenticationToken = mobileDB.getRegistrationToken(req.body.ethereumAddress)
 		request.setRegistrationToken(authenticationToken);
     }).then(function initiateChallenge() {
-    	return challengeSevice.challengeMobile(request);
+    	 challengeSevice.challengeMobile(request);
+    	 var defer = Q.defer();
+	    setTimeout(function() {
+	    	defer.resolve();
+	    },10000)
+	    return defer.promise;
 	}).then(function onSuccess() {
 		return passportIndex.getPassport(req.body.ethereumAddress)
 	}).then(function sendResponse(passport) {

@@ -21,10 +21,7 @@ router.post('/mobile', function (req, res, next) {
     var request = MobileRegistrationRequest(registrationToken,ethereumAddress,requestId)
     Q.fcall(function ackRequest() {
 		res.sendStatus(200);
-	}).then(function sendChallange() {
-		return challengeSevice.challengeMobile(request)
-	}).then(function onSuccess() {
-		log.info(requestId + ' mobile registration request was submitted succesfully');
+		console.log(requestId + ' mobile registration request was submitted succesfully');
 		mobileDB.saveMobileMapping(ethereumAddress,registrationToken);
 	}).fail(function onFailure(error) {
 		errorHandler.handleError(res,error,requestId,403);
@@ -44,7 +41,12 @@ router.post('/user', function (req, res, next) {
 		var authenticationToken = mobileDB.getRegistrationToken(ethereumAddress)
 		request.setRegistrationToken(authenticationToken);
 	}).then(function sendChallenge() {
-	    return challengeSevice.challengeMobile(request)
+	    challengeSevice.challengeMobile(request)
+	    var defer = Q.defer();
+	    setTimeout(function() {
+	    	defer.resolve();
+	    },10000)
+	    return defer.promise;
 	}).then(function registerPassport() {
 		console.log(requestId + ' user registration request was submitted succesfully');
 		return passportIndex.register(ethereumAddress, ethereumAddress.name, ethereumAddress.surname, ethereumAddress.dob,ethereumAddress.ssn, 

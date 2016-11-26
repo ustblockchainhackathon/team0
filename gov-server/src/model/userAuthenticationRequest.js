@@ -44,6 +44,9 @@ module.exports = function(ethereumAddress, requestId, officerName, officerSurnam
         setRegistrationToken : function setRegistrationToken(_registrationToken) {
 			registrationToken = _registrationToken;
 		},
+		getRegistrationToken : function getRegistrationToken() {
+			return registrationToken;
+		},
 		setChallenge : function setChallenge(_challenge) {
 			challenge = _challenge;
 		},
