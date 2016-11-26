@@ -15,9 +15,14 @@
         var deferred = $q.defer();
 
 		factory.postAuthentication = function (item) {
+			var personalDetails = {};
+			personalDetails.name = item.name;
+			personalDetails.surname = item.surname;	
+			item.personalDetails = personalDetails;
 			var req = {
 				method: 'POST',
-				url: '/authenticate',
+				//url: 'http://localhost:3000/authenticate',//local debugging
+				url: 'http://gov-server.eu-gb.mybluemix.net/authenticate',
 				headers: REQUEST_BACKEND_HEADER,
 				data: item
 			};
