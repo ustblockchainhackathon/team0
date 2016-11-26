@@ -1,0 +1,136 @@
+//IMPORT ORDER MATTERS IN THIS FILE, SO PLEASE BE CAREFUL TO LEAVE IT LIKE THIS:
+//CUSTOM VARIABLES
+@import "custom-styles/variables";
+//BOOTSWATCH THEME VARIABLES
+@import "variables";
+//APPVERSE BOOTSTRAP THEME (FROM BOWER COMPONENTS)
+@import "bootstrap-theme";
+//BOOTSWATCH THEME
+@import "theme";
+//CUSTOM STYLES ADDED IN PARTIAL FILES
+@import "custom-styles/partials";
+html,
+body {
+	height: 93%;
+	width: 100%;
+	background: rgb(210, 223, 237);
+	/* Old browsers */
+	background-image: url(../images/header-bg.jpg);
+	    background-repeat: no-repeat;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+	// overflow: hidden;
+}
+
+.totalHeight {
+	height: 100%;
+}
+
+.alert {
+	border-radius: 4px;
+}
+
+.growl-container.growl-fixed.top-right {
+	top: 75px;
+	right: 15px;
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: #e6e6e6;
+}
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0px 0 0px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+	font-weight: 400;
+    letter-spacing: 1px;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+}
+.navbar .navbar-nav > li.active a {
+	color: #fed136 !important;
+    border-bottom: 0px solid #213e7f;
+    padding-bottom: 17px;
+}
+.navbar .navbar-nav > li > a:hover, .navbar-brand:hover {
+    color: #fed136 !important;
+}
+.navbar .navbar-brand {
+    min-width: 80px;
+    width: 150px;
+    margin: 0 20px !important;
+    padding: 15px;
+    background-image: none;
+	color: #fed136;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+.btn-xl {
+    color: #fff;
+    background-color: #fed136;
+    border-color: #fed136;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+	margin-right: 5%;
+    margin-left: 5%;
+}
+.titleMenu{
+	color: #fed136;
+    margin-top: 1%;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #fed136;
+    background-color: transparent;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.rowRegister{
+	margin-top: 15%;
+}
+.table th {
+   text-align: center;   
+}
+.passportImage{
+    background-image: url(../images/blocckchain%20pass%20yellow.png);
+    width: 300px;
+    height: 410px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}

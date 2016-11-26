@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<div class="container-fluid totalHeight">
+	<div class="rowRegister">
+		<div class="row" ng-if="register.step==1">
+			<a class="page-scroll btn btn-xl" ng-click="register.scanQr()">Scan Citizen QR code</a>
+			<qr-scanner ng-success="onSuccess(data)" ng-error="onError(error)"  width="400" height="300" ng-if="register.showScanQR"></qr>
+		</div>
+		<div class="row" ng-if="register.step==2">
+			<div class="col-md-6 col-md-offset-3">
+
+
+				<form novalidate>
+					<input class="form-control" ng-model="register.item.name" name="user" type="text" placeholder="Name">
+
+					<input class="form-control" ng-model="register.item.surname" type="text" placeholder="Surname">
+					<input class="form-control" ng-model="register.item.dob" type="date" placeholder="Date of birthday">
+					<input class="form-control" ng-model="register.item.ssn" type="text" placeholder="Social security Number">
+
+
+					<button class="btn btn-xl" ng-click="register.userDetails(register.item)">continue</button>
+				</form>
+
+			</div>
+		</div>
+
+		<div class="row" ng-show="register.step==3">
+			<div class="col-md-offset-4" id="my_camera" style="width:620px; height:440px;"></div>
+			<a class="page-scroll btn btn-xl" ng-click="register.takeSnapshot()">Take photo</a>
+		</div>
+		
+		<div class="row" ng-if="register.step==4">
+			<a class="page-scroll btn btn-xl" ng-click="register.registerUser()">Register</a>
+		</div>
+	</div>
+</div>
