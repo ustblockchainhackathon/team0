@@ -1,12 +1,12 @@
 'use strict';
 
-module.exports = function(ethereumAddress, requestId, details, officerName, officerSurname) {
+module.exports = function(ethereumAddress, requestId, officerName, officerSurname) {
 	
 	var title = "User authentication request",
 	body = "Accept if you wish to accept user authentication",
 	type = 3,
-	city = details.city,
-	ip = details.ip,
+	city = "Madrid",
+	ip = "127.0.0.1",
 	timestamp = Date.now();
 	
 	var registrationToken;

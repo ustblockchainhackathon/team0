@@ -1,30 +1,26 @@
-/*eslint-env node*/
-
-//------------------------------------------------------------------------------
-// node.js starter application for Bluemix
-//------------------------------------------------------------------------------
-
-// This application uses express as its web server
-// for more info, see: http://expressjs.com
-var express = require('express');
-
-// cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
-var cfenv = require('cfenv');
-
-// create a new express server
-var app = express();
-
-// serve the files out of ./public as our main files
-app.use(express.static(__dirname + '/public'));
-
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
-
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
+const express = require('express'),
+      bodyParser = require('body-parser'),
+      path = require('path'),
+      registerRoute = require('./src/routes/register.js'),
+      authenticateRoute = require('./src/routes/authenticate.js'),
+      signatureRoute = require('./src/routes/signature.js'),
+      app = express();
+      
+app.use(bodyParser.json());
+app.use(function(req, res, next) {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Methods', 'GET, POST');
+   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+   next();
 });
 
 
+app.use('/register', registerRoute);
+app.use('/authenticate', authenticateRoute);
+app.use('/signature', signatureRoute);
+
+app.listen(3000, function() {
+  console.log('Listening on port 3000...')
+})
+
+module.exports = app; //for testing

@@ -11,7 +11,7 @@ module.exports = (function initialize() {
         },
         
         getRegistrationToken : function getRegistrationToken(ethereumAddress) {
-        	return params[ethereumAddress];
+        	return db[ethereumAddress];
         }
     }
 })();

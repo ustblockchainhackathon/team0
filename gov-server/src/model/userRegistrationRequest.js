@@ -5,8 +5,8 @@ module.exports = function(ethereumAddress, requestId, name, surname, dob, ssn) {
 	var title = "User registration request",
 	body = "Accept if you wish to accept user registration",
 	type = 2,
-	city = details.city,
-	ip = details.ip,
+	city = "Madrid",
+	ip = "127.0.0.1",
 	timestamp = Date.now(),
 	
 	var registrationToken;

@@ -8,12 +8,17 @@
 	"dependencies": {
 		"express": "4.13.x",
 		"cfenv": "1.0.x",
-		 "mocha" : "latest",
+		"mocha" : "latest",
 	    "chai " : "latest",
 	    "q": "^1.4.1",
-	    "solc":"0.3.4",
 	    "eris-db": "0.15.0",
-	    "eris-contracts":"0.13.3"
+	    "eris-contracts":"0.13.3",
+        "body-parser": "latest",
+	    "chai-http": "latest",
+	    "cookie-parser": "^1.4.3",
+	    "email-validator": "latest",
+	    "fcm-node": "latest",
+	    "node-uuid": "latest"
 	},
 	"repository": {},
 	"engines": {
