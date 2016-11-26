@@ -9,14 +9,6 @@ app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
-    if(BMSClient)
-		BMSClient.initialize("app-route", "app-guide");
-	
-	// Enable usage analytics recording
-	BMSAnalytics.enable();
-
-	// Send recorded usage analytics to the Mobile Client Access Service
-	BMSAnalytics.send();
   
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
